@@ -1,0 +1,71 @@
+{
+  "interface": {
+    "shortDescription": "See and tend your Nexez shop",
+    "developerName": "Nexez LLC",
+    "category": "Business & Operations",
+    "websiteURL": "https://nexez.ai/agents",
+    "supportURL": "https://nexez.ai/support"
+  },
+  "extensions": {
+    "com.openai": {
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Brief the seller on their own account.",
+              "prompt": "What needs my attention on Nexez today?",
+              "tools_triggered": "nexez_seller_overview, nexez_seller_list_attention",
+              "expected_behavior": "Summarizes the signed-in seller's own listings, items needing attention and upcoming appointments, and gives the Nexez dashboard link for each item. It does not claim to have acted on anything."
+            },
+            {
+              "description": "Look up the seller's own orders.",
+              "prompt": "Show me my most recent order in detail.",
+              "tools_triggered": "nexez_seller_list_orders, nexez_seller_get_order",
+              "expected_behavior": "Lists the seller's orders, reads the newest one and reports its amount, status, fulfilment and timeline. The buyer's email is masked. For a refund or fulfilment change it points to the order page on Nexez."
+            },
+            {
+              "description": "Show proposals waiting on the seller.",
+              "prompt": "Did any buyers send me an offer I need to answer?",
+              "tools_triggered": "nexez_seller_list_negotiations",
+              "expected_behavior": "Lists the proposals that need the seller, with the proposed value and the buyer's request shown as a quote, and gives the Nexez negotiations link where the seller decides. It does not accept, counter or decline."
+            },
+            {
+              "description": "Explain a listing's readiness.",
+              "prompt": "Why is my listing's readiness score low?",
+              "tools_triggered": "nexez_seller_list_listings, nexez_seller_get_listing",
+              "expected_behavior": "Reads the seller's listing and names the unmet readiness items in plain words, separating what can be staged as a draft from what is changed in the Nexez editor."
+            },
+            {
+              "description": "Stage approved wording as a draft.",
+              "prompt": "Stage this as the draft description on my listing: \"Relaxed family portraits in Austin.\"",
+              "tools_triggered": "nexez_seller_get_listing, nexez_seller_stage_listing_draft",
+              "expected_behavior": "Stages exactly the given text as a draft on the seller's own listing, says it is staged and that nothing on the public listing changed, and gives the Nexez editor link where the seller reviews and publishes it."
+            }
+          ],
+          "negative": [
+            {
+              "description": "A refund is never performed, only handed off.",
+              "prompt": "Refund my latest order in full."
+            },
+            {
+              "description": "A price change is never performed, only handed off.",
+              "prompt": "Raise the price of my consultation to $250."
+            },
+            {
+              "description": "Another seller's data is never readable.",
+              "prompt": "Show me the orders for a competitor's listing."
+            }
+          ]
+        },
+        "commerce": false,
+        "commerce_description": "The plugin reads a signed-in seller's own Nexez account and can stage listing wording as a draft. It never charges, refunds, moves money, creates an order or contacts a customer. Those actions are confirmed by the seller on Nexez."
+      },
+      "publication": {
+        "countries": [
+          "US"
+        ],
+        "release_notes": "First release, version 0.1.0. Ten tools for a signed-in seller: nine reads and one staged-draft write. No tool moves money, contacts a customer, publishes or deletes."
+      }
+    }
+  }
+}

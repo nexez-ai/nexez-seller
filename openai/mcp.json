@@ -1,0 +1,22 @@
+{
+  "mcpServers": {
+    "nexez-seller": {
+      "type": "streamable-http",
+      "url": "https://nexez.app/mcp/seller",
+      "extensions": {
+        "com.openai": {
+          "auth": {
+            "type": "oauth",
+            "client": {
+              "mode": "provided",
+              "clientId": "3b6bfbdc-7881-4699-86c7-0fedf86f8a1f",
+              "tokenEndpointAuthMethod": "none"
+            },
+            "authorizationUrl": "https://pvsotrzgnjpqrsndhgmu.supabase.co/auth/v1/oauth/authorize",
+            "tokenUrl": "https://pvsotrzgnjpqrsndhgmu.supabase.co/auth/v1/oauth/token"
+          }
+        }
+      }
+    }
+  }
+}

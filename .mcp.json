@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "nexez-seller": {
+      "type": "http",
+      "url": "https://nexez.app/mcp/seller",
+      "oauth": {
+        "clientId": "a465f9f9-15ae-42ce-96ac-4c267ce553e7",
+        "callbackPort": 33418
+      }
+    }
+  }
+}

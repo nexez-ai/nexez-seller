@@ -1,0 +1,15 @@
+{
+  "name": "nexez-seller",
+  "description": "The Nexez Seller plugin: a merchant's own Nexez listings, orders, negotiations and appointments from an assistant.",
+  "owner": {
+    "name": "Nexez",
+    "email": "support@nexez.ai"
+  },
+  "plugins": [
+    {
+      "name": "nexez-seller",
+      "source": "./",
+      "description": "Work with your own Nexez business: see listings, orders, negotiations and appointments, and stage listing drafts you publish yourself."
+    }
+  ]
+}

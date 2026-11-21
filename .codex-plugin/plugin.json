@@ -1,0 +1,43 @@
+{
+  "name": "nexez-seller",
+  "version": "0.1.1",
+  "description": "Work with your own Nexez business: see listings, orders, negotiations and appointments, and stage listing drafts you publish yourself.",
+  "author": {
+    "name": "Nexez",
+    "email": "support@nexez.ai",
+    "url": "https://nexez.ai"
+  },
+  "homepage": "https://nexez.ai/agents",
+  "repository": "https://github.com/nexez-ai/nexez-seller",
+  "license": "MIT",
+  "keywords": [
+    "commerce",
+    "sellers",
+    "orders",
+    "appointments"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Nexez Seller",
+    "shortDescription": "See and tend your Nexez business.",
+    "longDescription": "Connect your Nexez seller account to see your listings, orders, negotiations and appointments, find what needs attention, and stage listing wording as a draft. Refunds, replies, prices and publishing stay on Nexez, where you confirm them yourself.",
+    "developerName": "Nexez",
+    "category": "Business & Operations",
+    "capabilities": [
+      "Read",
+      "Draft"
+    ],
+    "websiteURL": "https://nexez.ai",
+    "privacyPolicyURL": "https://nexez.ai/privacy",
+    "termsOfServiceURL": "https://nexez.ai/terms",
+    "brandColor": "#F15A29",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/icon.png",
+    "defaultPrompt": [
+      "What needs my attention on Nexez today?",
+      "Show me this week's orders and anything not yet fulfilled.",
+      "Help me improve the description on my listing."
+    ]
+  }
+}
