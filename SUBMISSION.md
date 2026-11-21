@@ -77,6 +77,25 @@ Not submitted. What a submission needs, following the buyer plugin:
 - `claude plugin validate` on the folder: passes, with no directory findings (checked with Claude Code 2.1.319). The directory also runs a safety scan and a policy review that the command does not.
 - A reviewer account. The one prepared for the OpenAI review has the demo data the eval cases need. Its sign-in details go in the submission form only.
 
+### The submission form
+
+Submissions are made at `https://claude.ai/directory/manage` (Submit new). The form has six steps. These are the answers prepared for this plugin; the owner sends it.
+
+1. **Source.** Repository `nexez-ai/nexez-seller`, default branch `main`, plugin at the repository root. The form validates the manifest and runs the directory's checks. A saved draft cannot change its repository, folder or branch.
+2. **Content.** Read from the repository: 1 MCP server, 4 skills, no hooks, commands, agents or mods.
+3. **Listing.** Read from `plugin.json` and the README: display name, description, author, keywords, privacy policy, support and homepage links. Surfaces to list on:
+   - Claude Code: yes. Sign-in and all tools are proven there.
+   - Cowork and the Claude apps (web, desktop, mobile): the form says a remote MCP server that needs sign-in works there only through its claude.ai connector. That path is not tested for this plugin, so tick these only after it is, or accept that the listing may not connect there.
+4. **Data handling.**
+   - Reads or stores personal data: **Reads only.** It reads the seller's own customer records (buyer names, masked email addresses, text buyers wrote). It stores no personal data: the one write saves listing wording.
+   - Any skill sends data to a service other than the declared connectors: **No.**
+   - How long the service retains data received from Claude: **Longer.** Wording staged with `nexez_seller_stage_listing_draft` stays on the seller's listing until they publish or discard it. Nothing else sent by Claude is kept beyond ordinary request logs.
+   - Intended for users under 18: **No.**
+5. **Compliance.** A contact email for scan results and review questions (not shown publicly), and four confirmations made on behalf of the organization: the Software Directory Terms and Directory Policy, that the privacy policy describes the data handled, that the plugin does not exfiltrate credentials or run code outside its declared MCP server, and that Anthropic may contact the account. These are the owner's to read and tick.
+6. **Review and submit.** The owner's.
+
+The data handling answers above are a recommendation. The second and third depend on what Nexez logs and keeps, which the owner knows better than these notes.
+
 Notes for a reviewer:
 
 - Every request needs sign-in. The first call returns 401 with a `WWW-Authenticate` challenge, and Claude Code opens the Nexez consent page.

@@ -1,6 +1,7 @@
 {
   "name": "nexez-seller",
   "version": "0.1.1",
+  "displayName": "Nexez Seller",
   "description": "Work with your own Nexez business: see listings, orders, negotiations and appointments, and stage listing drafts you publish yourself.",
   "author": {
     "name": "Nexez",
@@ -10,6 +11,7 @@
   "homepage": "https://nexez.ai/agents",
   "repository": "https://github.com/nexez-ai/nexez-seller",
   "privacyPolicyUrl": "https://nexez.ai/privacy",
+  "supportUrl": "https://nexez.ai/support",
   "license": "MIT",
   "keywords": [
     "commerce",
